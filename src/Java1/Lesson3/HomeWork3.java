@@ -75,6 +75,11 @@ public class HomeWork3 {
 //        System.out.println("Minimum element: " + findMin(arrNum2));
 //        System.out.println("Maximum element: " + findMax(arrNum2));
 //        System.out.println("**********");
+
+        //Упражнение 7
+//        int[] arrNum3 = {2, 2, 2, 1, 2, 2, 10, 1};
+//        System.out.println(Arrays.toString(arrNum3));
+//        System.out.println(checkBalance(arrNum3));
     }
 
     //Упражнение 1
@@ -168,5 +173,23 @@ public class HomeWork3 {
 //            }
 //        }
 //        return max;
+//    }
+
+    //Упражнение 7
+//    private static boolean checkBalance(int[] arrNum3) {
+//
+//        int right = 0, left = 0;
+//
+//        for (int i = 0; i < arrNum3.length-1; i++) {
+//            left += arrNum3[i];
+//            for (int j = i + 1; j < arrNum3.length; j++) {
+//                right += arrNum3[j];
+//            }
+//            if (left == right) {
+//                return true;
+//            }
+//            right = 0;
+//        }
+//        return false;
 //    }
 }
