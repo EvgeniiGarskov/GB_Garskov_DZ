@@ -1,7 +1,9 @@
 package Java2.Lesson6.Client;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.ListView;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -32,6 +34,9 @@ public class Controller {
     @FXML
     PasswordField passwordField;
 
+    @FXML
+    ListView<String> clientsList;
+
     //Добавим объекты, которые нам потребуются для работы по сети
     Socket socket;
     DataInputStream in;
@@ -49,11 +54,15 @@ public class Controller {
             upperPanel.setManaged(true);
             bottomPanel.setVisible(false);
             bottomPanel.setManaged(false);
+            clientsList.setVisible(false);
+            clientsList.setManaged(false);
         } else {
             upperPanel.setVisible(false);
             upperPanel.setManaged(false);
             bottomPanel.setVisible(true);
             bottomPanel.setManaged(true);
+            clientsList.setVisible(true);
+            clientsList.setManaged(true);
         }
     }
     //Метод, который позволяет производить инициализацию в момент запуска
@@ -91,7 +100,17 @@ public class Controller {
                                 // out.writeUTF("/end");
                                 break;
                             }
-                            textArea.appendText(str + "\n");
+                            if (str.startsWith("/clientsList ")) {
+                                String[] tokens = str.split(" ");
+                                Platform.runLater(() -> {
+                                    clientsList.getItems().clear();
+                                    for (int i = 1; i < tokens.length; i++) {
+                                        clientsList.getItems().add(tokens[i]);
+                                    }
+                                });
+                            } else {
+                                textArea.appendText(str + "\n");
+                            }
                         }
                     } catch (IOException e) {
                         e.printStackTrace();
