@@ -14,7 +14,7 @@ public class HomeWork2 {
         try {
             //Инициализация драйвера
             Class.forName("org.sqlite.JDBC");
-            connection = DriverManager.getConnection("jdbc:sqlite:main.db");
+            connection = DriverManager.getConnection("jdbc:sqlite:tableJava3.db");
             stmt = connection.createStatement();
 
             ResultSet rs = stmt.executeQuery("SELECT * from users");
