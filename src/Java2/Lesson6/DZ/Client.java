@@ -1,17 +1,17 @@
-package Java2.Lesson6.DZ;
-
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.net.ServerSocket;
-import java.net.Socket;
-import java.util.Scanner;
-
-public class Client {
-
-    public static void main(String[] args) {
-
+//package Java2.Lesson6.DZ;
+//
+//import java.io.DataInputStream;
+//import java.io.DataOutputStream;
+//import java.io.IOException;
+//import java.io.PrintWriter;
+//import java.net.ServerSocket;
+//import java.net.Socket;
+//import java.util.Scanner;
+//
+//public class Client {
+//
+//    public static void main(String[] args) {
+//
 ////        private final String SERVER_ADDR = "localhost";
 ////        private final int SERVER_PORT = 7633;
 //        Socket socket = null;
@@ -74,5 +74,5 @@ public class Client {
 //                e.printStackTrace();
 //            }
 //        }
-    }
-}
+//    }
+//}
